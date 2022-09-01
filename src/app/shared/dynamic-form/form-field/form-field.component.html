@@ -1,0 +1,22 @@
+<div [formGroup]="form">
+    <mat-form-field appearance="legacy" floatLabel="never" class="w-100">
+        <mat-label>{{control.label}}</mat-label>
+        <input matInput [type]="control.type" [formControlName]="control.controlName" autocomplete="off" #inputControl>
+        <mat-icon matPrefix color="white" *ngIf="control.iconName">{{control.iconName}}</mat-icon>
+        <mat-icon matSuffix color="white" *ngIf="control.type === 'password'" (click)="showPassword()">remove_red_eye</mat-icon>
+        <mat-error *ngIf="dyForm[control.controlName].errors?.['required'] else minlengthErr" class="m-b-10">
+            {{control.errormsg.required}}</mat-error>
+        <ng-template #minlengthErr>
+            <mat-error *ngIf="dyForm[control.controlName].errors?.['minlength'] else maxlengthErr" class="m-b-10">
+                {{control.errormsg.minlength}}</mat-error>
+        </ng-template>
+        <ng-template #maxlengthErr>
+            <mat-error *ngIf="dyForm[control.controlName].errors?.['maxlength'] else patternErr" class="m-b-10">
+                {{control.errormsg.maxlength}}</mat-error>
+        </ng-template>
+        <ng-template #patternErr>
+            <mat-error *ngIf="dyForm[control.controlName].errors?.['patternErr']" class="m-b-10">
+                {{control.errormsg.pattern}}</mat-error>
+        </ng-template>
+    </mat-form-field>
+</div>

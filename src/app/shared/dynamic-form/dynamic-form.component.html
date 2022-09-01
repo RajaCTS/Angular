@@ -1,0 +1,8 @@
+<form [formGroup]="form" class="form">
+    <div *ngFor="let control of formObj">
+        <app-form-field [control]="control" [form]="form"></app-form-field>
+    </div>
+    <div *ngFor="let button of buttonList">
+        <button mat-raised-button [color]="button.color" (click)="formBtnClick()">{{button.name}}</button>
+    </div>
+</form>

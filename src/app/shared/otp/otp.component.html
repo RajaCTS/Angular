@@ -1,0 +1,15 @@
+<app-timer [timerSec]="timer" (timerClear)="resetTimer($event)"></app-timer>
+<div class="form">
+    <mat-form-field appearance="legacy" floatLabel="never">
+        <mat-label>Enter OTP</mat-label>
+        <input matInput autocomplete="off" [formControl]="otpField" maxlength="6" [readonly]="timeOver">
+        <mat-error *ngIf="otpField.errors?.['required'] else minlengthErr" class="m-b-10">
+            OTP field is required</mat-error>
+        <ng-template #minlengthErr>
+            <mat-error *ngIf="otpField.errors?.['minlength']" class="m-b-10">
+                Minimum length not satisfied</mat-error>
+        </ng-template>
+    </mat-form-field>
+    <a *ngIf="timeOver" class="hyperlink m-b-10" (click)="resendOTP()">Resend OTP</a>
+    <button mat-raised-button color="primary" (click)="otpSubmit()">Submit</button>
+</div>

@@ -1,0 +1,24 @@
+.header{
+    height: 60px;
+    background-color: #292f45;
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.title{
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.header-links{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    & li{
+        margin-left: 20px;
+        cursor: pointer;
+    }
+}

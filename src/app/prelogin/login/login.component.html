@@ -1,0 +1,16 @@
+<h1 class="color-white m-b-50" *ngIf="!resetPwdClicked">Welcome to Raja's Kitchen</h1>
+<div class="form">
+    <mat-tab-group>
+        <mat-tab label="LOGIN">
+            <div class="p-20">
+                <app-dynamic-form [formObj]="loginPage['loginForm']" [buttonList]="loginPage['loginBtn']" (buttonClick)="login($event)"></app-dynamic-form>
+                <a class="hyperlink m-t-30" (click)="resetPwdClick()">Forget Password</a>
+            </div>
+        </mat-tab>
+        <mat-tab label="SIGN UP">
+            <div class="p-20">
+                <app-dynamic-form [formObj]="loginPage['signupForm']" [buttonList]="loginPage['signupBtn']" (buttonClick)="signup($event)"></app-dynamic-form>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>

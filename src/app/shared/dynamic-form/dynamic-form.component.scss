@@ -1,0 +1,50 @@
+:host ::ng-deep .mat-form-field-wrapper{
+    margin-bottom: 10px !important;
+  }
+    :host ::ng-deep .mat-form-field-flex {
+      align-items: center !important;
+      border: 1px solid #fff;
+      padding: 5px 10px;
+      border-radius: 10px;
+      color:  #fff;
+    }
+    :host ::ng-deep .mat-form-field-infix {
+      border: none !important;
+      margin-left: 10px !important;
+    }
+    :host ::ng-deep .mat-form-field-label{
+      color: #fff !important;
+    }
+    :host ::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label{
+      color: #f44336 !important;
+    }
+    :host ::ng-deep .mat-form-field-underline{
+      display: none !important;
+    }
+    :host ::ng-deep .mat-form-field {
+      &.mat-focused {
+        & .mat-form-field-flex {
+          border-color: #7367f0;
+          transition: border-color 0.5s linear;
+        }
+        & .mat-form-field-label{
+          color: #7367f0 !important;
+        }
+      }
+      &.mat-form-field-invalid  {
+        & .mat-form-field-flex {
+          border-color: #c00000;
+          background-color: #ff47475e;
+          transition: border-color 0.5s linear;
+        }
+      }
+    }
+      
+    button{
+      width: 100%;
+    }
+    .form{
+        display: flex;
+        flex-direction: column; 
+        transition: all 0.4s linear;    
+    }
